@@ -5,10 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { GameService } from './app/game.service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  template: `
+    selector: 'app-root',
+    imports: [CommonModule, FormsModule],
+    template: `
     <div class="min-h-screen romantic-bg">
       <div class="container mx-auto px-4 py-8">
         <!-- Progress Bar -->
@@ -138,7 +137,7 @@ import { GameService } from './app/game.service';
       </div>
     </div>
   `,
-  providers: [GameService]
+    providers: [GameService]
 })
 export class App implements OnInit {
   gameState = {
