@@ -72,22 +72,26 @@ import { GameService } from './app/game.service';
           </p>
         </div>
 
-        <!-- Level 2: Secret Code -->
-        <div *ngIf="gameState.currentLevel === 2" class="fade-in">
-          <h2 class="text-2xl font-bold text-center text-[#ff6b6b] mb-6">
-            Nivel 2: El Código Secreto
-          </h2>
-          <div class="max-w-md mx-auto">
-            <p class="text-center text-gray-600 mb-4">
-              Descifra el código del amor... 
-              Pista: Es una fecha especial (solamente 4)
-            </p>
-            <input [(ngModel)]="secretCode" 
-                   class="input-romantic w-full text-center"
-                   placeholder="Ingresa el código..."
-                   (keyup.enter)="checkSecretCode()">
-          </div>
-        </div>
+       <!-- Level 2: Secret Code -->
+<div *ngIf="gameState.currentLevel === 2" class="fade-in">
+  <h2 class="text-2xl font-bold text-center text-[#ff6b6b] mb-6">
+    Nivel 2: El Código Secreto
+  </h2>
+  <div class="max-w-md mx-auto">
+    <p class="text-center text-gray-600 mb-4">
+      Descifra el código del amor... 
+      Pista: Es una fecha especial (solamente 4 digitos)
+    </p>
+    <input [(ngModel)]="secretCode" 
+           class="input-romantic w-full text-center mb-4"
+           placeholder="Ingresa el código...">
+    
+    <button (click)="checkSecretCode()" class="romantic-button w-full">
+      Verificar Código
+    </button>
+  </div>
+</div>
+
 
         <!-- Level 3: Relationship Question -->
         <div *ngIf="gameState.currentLevel === 3 && !gameState.completed" class="fade-in">
